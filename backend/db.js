@@ -1,17 +1,6 @@
-/**
- * ============================================================
- *  db.js - Conexión a MySQL (LaCuentaSale)
- *
- *  Creamos un pool de conexiones:
- *  - Reutiliza conexiones (más eficiente)
- *  - Permite usar db.getConnection()
- * ============================================================
- */
-
 const mysql = require("mysql2/promise");
 require("dotenv").config();
 
-// Pool de conexiones a MySQL usando variables del archivo .env
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
